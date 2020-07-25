@@ -29,7 +29,7 @@ func (pointerPerson *Person) passByReferenceUpdateName(fName string, lName strin
 
 }
 
-func main() {
+func main2() {
 
 	johnContact := ContactInfo{email: "john.doe@gmail.com", zipcode: 11111}
 	john := Person{firstName: "john", lastName: "doe", contact: johnContact}
