@@ -50,4 +50,15 @@ func main() {
 	//implicit pointer conversion
 	john.passByReferenceUpdateName("john2", "walker 2")
 	john.print()
+
+	mySlice := []string{"hi", "there"}
+	//slices are passed by reference by default unlike struct
+	updateSlice(mySlice)
+
+	fmt.Println(mySlice)
+
+}
+
+func updateSlice(argSlice []string) {
+	argSlice[0] = "bye"
 }
