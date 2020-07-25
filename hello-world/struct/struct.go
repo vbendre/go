@@ -42,9 +42,12 @@ func main() {
 	john.passByValueUpdateName("john1", "walker1")
 	john.print()
 
+	//explicit pointer conversion
 	johnPointer := &john
-
 	johnPointer.passByReferenceUpdateName("john1", "walker1")
+	john.print()
 
+	//implicit pointer conversion
+	john.passByReferenceUpdateName("john2", "walker 2")
 	john.print()
 }
