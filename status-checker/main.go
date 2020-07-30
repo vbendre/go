@@ -22,21 +22,26 @@ func main() {
 		go checkLink(link, c)
 	}
 
-	for i := 0; i < len(links); i++ {
+	// for i := 0; i < len(links); i++ {
+	// 	fmt.Println(<-c)
+	// }
+	// alternate syntax
+	for {
 		fmt.Println(<-c)
 	}
+
 }
 
 func checkLink(link string, c chan string) {
 	_, err := http.Get(link)
 
 	if err != nil {
-		fmt.Println(link + " might be down!!")
-		c <- "might be down I think"
+		// fmt.Println(link + " might be down!!")
+		c <- link + " might be down!!"
 		return
 	}
 
-	fmt.Println(link + " link is working!!")
-	c <- "yeah its up"
+	// fmt.Println(link + " link is working!!")
 
+	c <- link + " link is working!!"
 }
