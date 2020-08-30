@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: go-app-label-v2
+  labels:
+    creation_method: manual
+    env: prod
+spec:
+  containers:
+    - name : go-app-container
+      image: vishalbendre/my-first-go-ap
+      ports:
+        - containerPort: 8080
+          protocol: TCP

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: go-app-pod
+spec:
+  containers:
+    - image: vishalbendre/my-first-go-ap
+      name: go-app-container
+      ports:
+        - containerPort: 8080
+          protocol: TCP  

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: goapp-liveprobe-pod
+
+spec:
+  containers:
+    - image: vishalbendre/goapp-liveprobe:v3
+      name: goapp-liveprobe-container
+      ports:
+        - containerPort: 8080
+          protocol: TCP
+      livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
