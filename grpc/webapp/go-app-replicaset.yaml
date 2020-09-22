@@ -1,0 +1,23 @@
+apiVersion: apps/v1beta2
+kind: ReplicaSet
+metadata:
+  name: goapp-replicaset
+spec:
+  replicas: 3
+  selector:
+    matchLabels: 
+      app: replicaset-label
+  template:
+    metadata:
+      labels:
+        app: replicaset-label
+    spec:
+      containers:
+        - image: vishalbendre/my-first-go-ap
+          name: goapp-replicaset-container
+          ports:
+            - containerPort: 8080
+              name: http
+            - containerPort: 8443
+              name: https
+

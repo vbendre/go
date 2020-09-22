@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: external-api-service
+spec:
+  type: ExternalName
+  externalName: abc.api.xyz
+  ports:
+    - port: 80
